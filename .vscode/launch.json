@@ -1,0 +1,70 @@
+// {
+//     "version": "0.2.0",
+//     "configurations": [
+//         {
+//             "name": "Run Tests",
+//             "type": "node",
+//             "request": "launch",
+//             "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
+//             "args": [
+//                 "--recursive",
+//                 "-u", "tdd",
+//                 "--timeout", "999999",
+//                 "--colors",
+//                 "./tests/out"                                
+//             ],
+//             "cwd": "${workspaceRoot}",
+//             "runtimeArgs": [
+//                 "--nolazy"
+//             ],
+//             "env": {
+//                 "NODE_ENV": "testing"
+//             },
+//             "sourceMaps": true,
+//             "outDir": "${workspaceRoot}/public/test"
+//         },
+//         {
+//             "name": "Attach",
+//             "type": "node",
+//             "request": "attach",
+//             "port": 5858,
+//             "address": "localhost",
+//             "restart": false,
+//             "sourceMaps": false,
+//             "outDir": null,
+//             "localRoot": "${workspaceRoot}",
+//             "remoteRoot": null
+//         }
+//     ]
+// }
+
+{
+    "version": "0.1.0",
+    "configurations": [     
+        {
+            "name": "Run mocha",
+            "type": "node",
+            
+            /* Globally installed mocha */
+            "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha", 
+            "stopOnEntry": false,           
+            
+            /* Specify which are the file you want the runner to pick up. */
+            "args": ["${workspaceRoot}/public/test/**/*.js"], 
+            "cwd": "${workspaceRoot}",
+            "runtimeExecutable": null,
+            "env": { 
+                "NODE_ENV": "production"
+            },
+            
+            /* If you are using Typescript and you alread have sourcemaps generated in                
+             * the test folder, simple specifying this flag will give the luxry 
+             * of debugging the typescript test instead of JavaScript.
+             */
+            "sourceMaps": true, 
+            
+            /* This is the directory where your tests are located.*/
+            "outDir": "${workspaceRoot}/public/test/" 
+        }
+    ]
+}
