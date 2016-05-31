@@ -12,10 +12,12 @@ gulp.task('build-source', function () {
         .pipe(gulp.dest('app/src'))    
 });
 
-gulp.task('build-tests', function () {
+gulp.task('build-test', function () {
     gulp.src('test/**/*.ts')
         .pipe(sourcemaps.init())
         .pipe(ts())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('app/test'))    
 });
+
+gulp.task('build-all-ts', ['build-source', 'build-test']);
