@@ -8,7 +8,7 @@ gulp.task('build-source', function () {
     gulp.src('src/**/*.ts')
         .pipe(sourcemaps.init())
         .pipe(ts())
-        .pipe(sourcemaps.write('maps'))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest('app/src'))    
 });
 
@@ -16,6 +16,6 @@ gulp.task('build-tests', function () {
     gulp.src('test/**/*.ts')
         .pipe(sourcemaps.init())
         .pipe(ts())
-        .pipe(sourcemaps.write('maps'))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest('app/test'))    
 });
