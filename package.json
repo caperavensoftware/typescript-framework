@@ -10,6 +10,8 @@
   "license": "ISC",
   "devDependencies": {
     "chai": "^3.5.0",
+    "gulp": "^3.9.1",
+    "gulp-typescript": "^2.13.5",
     "mocha": "^2.5.3",
     "sinon": "^1.17.4",
     "typescript": "^1.8.10"

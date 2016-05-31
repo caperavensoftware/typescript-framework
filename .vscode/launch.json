@@ -1,43 +1,3 @@
-// {
-//     "version": "0.2.0",
-//     "configurations": [
-//         {
-//             "name": "Run Tests",
-//             "type": "node",
-//             "request": "launch",
-//             "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
-//             "args": [
-//                 "--recursive",
-//                 "-u", "tdd",
-//                 "--timeout", "999999",
-//                 "--colors",
-//                 "./tests/out"                                
-//             ],
-//             "cwd": "${workspaceRoot}",
-//             "runtimeArgs": [
-//                 "--nolazy"
-//             ],
-//             "env": {
-//                 "NODE_ENV": "testing"
-//             },
-//             "sourceMaps": true,
-//             "outDir": "${workspaceRoot}/public/test"
-//         },
-//         {
-//             "name": "Attach",
-//             "type": "node",
-//             "request": "attach",
-//             "port": 5858,
-//             "address": "localhost",
-//             "restart": false,
-//             "sourceMaps": false,
-//             "outDir": null,
-//             "localRoot": "${workspaceRoot}",
-//             "remoteRoot": null
-//         }
-//     ]
-// }
-
 {
     "version": "0.1.0",
     "configurations": [     
@@ -50,7 +10,7 @@
             "stopOnEntry": false,           
             
             /* Specify which are the file you want the runner to pick up. */
-            "args": ["${workspaceRoot}/public/test/**/*.js"], 
+            "args": ["${workspaceRoot}/app/test/**/*.js"], 
             "cwd": "${workspaceRoot}",
             "runtimeExecutable": null,
             "env": { 
@@ -64,7 +24,7 @@
             "sourceMaps": true, 
             
             /* This is the directory where your tests are located.*/
-            "outDir": "${workspaceRoot}/public/test/" 
+            "outDir": "${workspaceRoot}/app/test/" 
         }
     ]
 }
