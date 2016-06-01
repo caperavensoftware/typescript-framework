@@ -1,23 +1,33 @@
-//https://www.npmjs.com/package/gulp-typescript
+'use strict'
 
 var gulp = require('gulp');
 var ts = require('gulp-typescript');
 var sourcemaps = require('gulp-sourcemaps');
+var paths = require('./paths');
 
-gulp.task('build-source', function () {
-    gulp.src('src/**/*.ts')
+function buildSource(forBrowser) {
+    var targetModule = forBrowser ? 'system' : 'commonjs';
+console.error(targetModule);    
+    gulp.src(paths.sourceFiles)
         .pipe(sourcemaps.init())
-        .pipe(ts())
+        .pipe(ts({
+            module: targetModule
+        }))
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest('app/src'))    
+        .pipe(gulp.dest(paths.sourceDestPath))        
+}
+
+gulp.task('build-source', ['clean-app'], function () {
+    buildSource(true);
 });
 
-gulp.task('build-test', function () {
-    gulp.src('test/**/*.ts')
+gulp.task('build-test', ['clean-app'], function () {
+    buildSource(false);
+    gulp.src(paths.testFiles)
         .pipe(sourcemaps.init())
         .pipe(ts())
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest('app/test'))    
+        .pipe(gulp.dest(paths.testDestPath))    
 });
 
 gulp.task('build-all-ts', ['build-source', 'build-test']);

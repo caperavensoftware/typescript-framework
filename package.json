@@ -11,6 +11,7 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
     "gulp-typescript": "^2.13.5",
     "mocha": "^2.5.3",
     "require-dir": "^0.3.0",
