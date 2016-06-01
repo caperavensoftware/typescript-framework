@@ -11,8 +11,7 @@
      "tasks": [
         {
             "taskName": "build",
-            "suppressTaskName": true,
-            
+            "suppressTaskName": true,            
             "isBuildCommand": true
         }
     ]

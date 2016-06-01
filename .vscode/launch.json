@@ -14,7 +14,7 @@
             "cwd": "${workspaceRoot}",
             "runtimeExecutable": null,
             "env": { 
-                "NODE_ENV": "production"
+                "NODE_ENV": "development"
             },
             
             /* If you are using Typescript and you alread have sourcemaps generated in                
