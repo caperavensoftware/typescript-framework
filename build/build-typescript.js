@@ -7,11 +7,10 @@ var paths = require('./paths');
 
 function buildSource(forBrowser) {
     var targetModule = forBrowser ? 'system' : 'commonjs';
-console.error(targetModule);    
     gulp.src(paths.sourceFiles)
         .pipe(sourcemaps.init())
         .pipe(ts({
-            module: targetModule
+            module: targetModule,
         }))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(paths.sourceDestPath))        

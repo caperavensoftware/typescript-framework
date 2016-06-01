@@ -1,8 +1,8 @@
 var gulp = require('gulp');
-var browserSync = ('browser-sync');
+var browserSync = require('browser-sync');
 var paths = require('./paths');
 
-gulp.task('serve', ['build-source'], function() {
+gulp.task('serve', function() {
     browserSync.init({
         server: {
             baseDir: './'
@@ -10,7 +10,7 @@ gulp.task('serve', ['build-source'], function() {
     });     
 });
 
-gulp.task('serve:watch', ['serve'], function() {
+gulp.task('serve:watch', function() {
     gulp.watch('*.html').on('change', browserSync.reload);
     gulp.watch(paths.sourceTemplates, ['copy-app-html']).on('change', browserSync.reload);
     gulp.watch(paths.sourceSass, ['build-app-sass']).on('change', browserSync.reload);
